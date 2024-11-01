@@ -1,0 +1,20 @@
+<!-- src/app/components/product-form/product-form.component.html -->
+<h2>{{ isEditMode ? 'Editar Produto' : 'Adicionar Produto' }}</h2>
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Nome</mat-label>
+    <input matInput formControlName="name" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Descrição</mat-label>
+    <input matInput formControlName="description" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Preço</mat-label>
+    <input matInput type="number" formControlName="price" required>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">{{ isEditMode ? 'Salvar' : 'Adicionar' }}</button>
+</form>

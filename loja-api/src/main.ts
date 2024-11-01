@@ -5,6 +5,9 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  // Habilita CORS para evitar erros ao conectar com o frontend Angular
+  app.enableCors();
+
   const config = new DocumentBuilder()
     .setTitle('Loja API')
     .setDescription('API para gestão de produtos da loja')
